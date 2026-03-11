@@ -10,9 +10,9 @@ export default function LandingPageNavbar() {
         <h1 className="text-2xl">Next.js Example</h1>
 
         <ul className="hidden md:flex gap-6">
+          <a href="/">Home</a>
           <a>Stuff</a>
           <a>More stuff</a>
-          <a>Even more stuff</a>
         </ul>
 
         <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
@@ -26,9 +26,9 @@ export default function LandingPageNavbar() {
         }`}
       >
         <ul className="flex flex-col gap-4">
+          <a href="/">Home</a>
           <a>Stuff</a>
           <a>More stuff</a>
-          <a>Even more stuff</a>
         </ul>
       </div>
     </nav>
