@@ -12,7 +12,7 @@ export default function ExternalLink({ href, children, className }: Props) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`text-blue-600 hover:underline ${className || ""}`}
+      className={`text-[#6D63FFFF] hover:underline ${className || ""}`}
     >
       {children}
     </a>

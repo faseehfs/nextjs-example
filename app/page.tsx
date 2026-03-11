@@ -32,9 +32,7 @@ export default function Home() {
           title="From where did you get these images?"
           image="/images/images.png"
         >
-          <ExternalLink href="https://undraw.co/" className="text-center">
-            Undraw.co
-          </ExternalLink>
+          <ExternalLink href="https://undraw.co/">Undraw.co</ExternalLink>
         </Feature>
 
         <hr className="text-gray-300" />

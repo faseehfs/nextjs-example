@@ -32,7 +32,7 @@ export default function Feature({
         />
       </div>
 
-      <div className="flex-1 p-4 flex flex-col justify-center">
+      <div className="flex-1 p-4 flex flex-col justify-center items-center">
         <h2 className="text-3xl text-center pb-4">{title}</h2>
         {text && <p className="text-center">{text}</p>}
         {children}
