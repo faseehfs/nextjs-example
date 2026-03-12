@@ -74,7 +74,7 @@ export default function Home() {
           image="/images/waiting-for-you.png"
         ></Feature>
       </div>
-      <Footer />
+      <Footer text="This is a footer" />
     </main>
   );
 }
