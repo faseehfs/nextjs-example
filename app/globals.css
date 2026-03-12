@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+.light {
   --color-bg: var(--color-white);
   --color-fg: var(--color-black);
   --color-fg-muted: var(--color-gray-300);
@@ -11,17 +11,15 @@
   --color-on-primary: var(--color-white);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: var(--color-gray-900);
-    --color-fg: var(--color-white);
-    --color-fg-muted: var(--color-gray-500);
+.dark {
+  --color-bg: var(--color-gray-900);
+  --color-fg: var(--color-white);
+  --color-fg-muted: var(--color-gray-500);
 
-    --color-primary: oklch(0.5973 0.1897 279.77);
-    --color-primary-hover: oklch(0.5406 0.1897 279.77);
-    --color-primary-active: oklch(0.5181 0.1897 279.77);
-    --color-on-primary: var(--color-white);
-  }
+  --color-primary: oklch(0.5973 0.1897 279.77);
+  --color-primary-hover: oklch(0.5406 0.1897 279.77);
+  --color-primary-active: oklch(0.5181 0.1897 279.77);
+  --color-on-primary: var(--color-white);
 }
 
 @theme {
