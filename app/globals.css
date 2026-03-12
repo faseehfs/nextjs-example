@@ -5,9 +5,9 @@
   --color-fg: var(--color-black);
   --color-fg-muted: var(--color-gray-300);
 
-  --color-primary: var(--color-indigo-500);
-  --color-primary-hover: var(--color-indigo-600);
-  --color-primary-active: var(--color-indigo-700);
+  --color-primary: oklch(0.5973 0.2237 279.77);
+  --color-primary-hover: oklch(0.5406 0.2237 279.77);
+  --color-primary-active: oklch(0.5181 0.2237 279.77);
   --color-on-primary: var(--color-white);
 }
 
@@ -16,6 +16,11 @@
     --color-bg: var(--color-gray-900);
     --color-fg: var(--color-white);
     --color-fg-muted: var(--color-gray-500);
+
+    --color-primary: oklch(0.5973 0.1897 279.77);
+    --color-primary-hover: oklch(0.5406 0.1897 279.77);
+    --color-primary-active: oklch(0.5181 0.1897 279.77);
+    --color-on-primary: var(--color-white);
   }
 }
 
