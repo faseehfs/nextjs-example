@@ -2,8 +2,9 @@
 
 .light {
   --color-bg: var(--color-white);
-  --color-fg: var(--color-black);
-  --color-fg-muted: var(--color-gray-300);
+  --color-text: var(--color-black);
+  --color-text-muted: var(--color-gray-700);
+  --color-border: var(--color-gray-300);
 
   --color-primary: oklch(0.5973 0.2237 279.77);
   --color-primary-hover: oklch(0.5406 0.2237 279.77);
@@ -13,8 +14,9 @@
 
 .dark {
   --color-bg: var(--color-gray-900);
-  --color-fg: var(--color-white);
-  --color-fg-muted: var(--color-gray-500);
+  --color-text: var(--color-white);
+  --color-text-muted: var(--color-gray-400);
+  --color-border: var(--color-gray-500);
 
   --color-primary: oklch(0.5973 0.1897 279.77);
   --color-primary-hover: oklch(0.5406 0.1897 279.77);
@@ -27,8 +29,9 @@
   --font-mono: var(--font-geist-mono);
 
   --color-bg: var(--color-bg);
-  --color-fg: var(--color-fg);
-  --color-fg-muted: var(--color-fg-muted);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-border: var(--color-border);
 
   --color-primary: var(--color-primary);
   --color-primary-hover: var(--color-primary-hover);
