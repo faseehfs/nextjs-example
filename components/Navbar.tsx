@@ -19,6 +19,10 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     const handleScroll = () => {
       setAtTop(window.scrollY === 0);
     };
