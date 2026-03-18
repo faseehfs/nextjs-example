@@ -2,6 +2,7 @@
 
 .light {
   --color-bg: var(--color-white);
+  --color-bg-hover: var(--color-gray-50);
   --color-surface: var(--color-gray-100);
   --color-text: var(--color-black);
   --color-text-muted: var(--color-gray-700);
@@ -15,6 +16,7 @@
 
 .dark {
   --color-bg: rgb(23, 23, 23);
+  --color-bg-hover: rgb(26, 26, 26);
   --color-surface: rgb(10, 10, 10);
   --color-text: rgb(227, 227, 227);
   --color-text-muted: rgb(150, 150, 150);
@@ -31,6 +33,7 @@
   --font-mono: var(--font-geist-mono);
 
   --color-bg: var(--color-bg);
+  --color-bg-hover: var(--color-bg-hover);
   --color-surface: var(--color-surface);
   --color-text: var(--color-text);
   --color-text-muted: var(--color-text-muted);
