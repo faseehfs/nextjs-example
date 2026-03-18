@@ -27,7 +27,7 @@ export default function Navbar() {
           Next.js Example
         </Link>
 
-        <ul className="hidden md:flex gap-6">{links}</ul>
+        <ul className="hidden md:flex mr-2 gap-6">{links}</ul>
 
         <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
           ☰

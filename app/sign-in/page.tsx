@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react";
 
 export default function SignIn() {
   return (
-    <div className="w-full max-w-2xl mx-auto p-4">
+    <div className="w-full max-w-lg mx-auto p-4">
       <h1 className="text-2xl mb-4">Choose a sign in method</h1>
       <button
         className="flex items-center justify-center w-full p-1 gap-2 hover:bg-bg-hover hover:cursor-pointer border border-border rounded"
