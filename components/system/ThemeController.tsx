@@ -14,15 +14,15 @@ export default function ThemeController() {
     if (LIGHT_ONLY_ROUTES.includes(pathname)) {
       html.classList.remove("dark");
       html.classList.add("light");
-      return;
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+
+      html.classList.toggle("dark", prefersDark);
+      html.classList.toggle("light", !prefersDark);
     }
 
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-
-    html.classList.toggle("dark", prefersDark);
-    html.classList.toggle("light", !prefersDark);
     html.classList.remove("hidden");
   }, [pathname]);
 
