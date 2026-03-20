@@ -10,7 +10,7 @@ export default function Hero() {
         Welcome to my website!
       </h1>
       <Link
-        className="px-8 mt-4 transition-all hover:scale-105 active:scale-103 py-2 border-bg border rounded bg-bg text-text"
+        className="px-8 mt-4 transition-all hover:scale-105 active:scale-103 py-2 rounded bg-bg/20 text-bg backdrop-blur"
         href={"/sign-in"}
       >
         Sign In
