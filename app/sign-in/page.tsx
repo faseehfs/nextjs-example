@@ -38,7 +38,7 @@ export default function SignIn() {
       </button>
 
       <Link href={"/"} className="mt-2">
-        <Button>Go back</Button>
+        <Button muted>Go back</Button>
       </Link>
     </div>
   );
