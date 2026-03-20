@@ -9,9 +9,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto p-4">
-      <h1 className="text-2xl mb-4">Choose a sign in method</h1>
-
+    <div className="flex flex-col w-full min-h-screen justify-center max-w-lg mx-auto p-4">
       <form action={resendAction}>
         <label htmlFor="email-resend">
           Email
