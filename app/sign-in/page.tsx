@@ -1,6 +1,6 @@
 "use client";
 
-import GithubIcon from "@/components/GitHubIcon";
+import GithubIcon from "@/components/ui/icons/GitHubIcon";
 import { signIn } from "next-auth/react";
 
 export default function SignIn() {

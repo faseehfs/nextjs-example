@@ -1,4 +1,4 @@
-import WorkInProgress from "@/components/WorkInProgress";
+import WorkInProgress from "@/components/ui/WorkInProgress";
 
 export default function Other() {
   return <WorkInProgress />;

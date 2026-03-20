@@ -1,8 +1,8 @@
-import Hero from "@/components/Hero";
-import Feature from "@/components/Feature";
-import Footer from "@/components/Footer";
-import ExternalLink from "@/components/ExternalLink";
-import Card from "@/components/Card";
+import Hero from "@/components/features/Hero";
+import Feature from "@/components/ui/Feature";
+import Footer from "@/components/layout/Footer";
+import ExternalLink from "@/components/ui/ExternalLink";
+import Card from "@/components/ui/Card";
 
 import sweetHomeImage from "@/assets/sweet-home.png";
 import sourceCodeImage from "@/assets/source-code.png";
