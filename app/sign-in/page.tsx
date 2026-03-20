@@ -11,7 +11,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className="flex flex-col w-full min-h-screen justify-center max-w-lg mx-auto p-4">
+    <div className="flex flex-col w-full min-h-[75vh] justify-center max-w-lg mx-auto p-4">
       <form action={resendAction} className="flex w-full gap-2">
         <Input
           type="email"
