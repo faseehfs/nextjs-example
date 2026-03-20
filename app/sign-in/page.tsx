@@ -4,6 +4,7 @@ import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import GithubIcon from "@/components/ui/icons/GitHubIcon";
 import Input from "@/components/ui/Input";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
 export default function SignIn() {
   const resendAction = (formData: FormData) => {
@@ -11,7 +12,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className="flex flex-col w-full min-h-[75vh] justify-center max-w-lg mx-auto p-4">
+    <div className="flex flex-col gap-2 w-full min-h-[75vh] justify-center max-w-lg mx-auto p-4">
       <form action={resendAction} className="flex w-full gap-2">
         <Input
           type="email"
@@ -23,7 +24,7 @@ export default function SignIn() {
           Sign In
         </ButtonPrimary>
       </form>
-      <div className="my-4 flex items-center gap-4">
+      <div className="flex items-center gap-2">
         <hr className="flex-1 text-border" />
         <p>or</p>
         <hr className="flex-1 text-border" />
@@ -35,6 +36,10 @@ export default function SignIn() {
       >
         <GithubIcon className="w-4 h-4" /> Sign in with GitHub
       </button>
+
+      <Link href={"/"} className="mt-2">
+        <ButtonPrimary>Go back</ButtonPrimary>
+      </Link>
     </div>
   );
 }
