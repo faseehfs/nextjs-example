@@ -3,12 +3,19 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { signOut } from "next-auth/react";
+import Button from "../ui/Button";
 
-const links = (
+const navContents = (
   <>
     <Link href="/home">Home</Link>
-    <Link href="/about">About</Link>
-    <Link href="/sign-in">Sign In</Link>
+    <Button
+      onClick={() => {
+        signOut();
+      }}
+    >
+      Sign Out
+    </Button>
   </>
 );
 
@@ -27,7 +34,7 @@ export default function Navbar() {
           Next.js Example
         </Link>
 
-        <ul className="hidden md:flex mr-2 gap-6">{links}</ul>
+        <ul className="hidden md:flex md:items-center gap-6">{navContents}</ul>
 
         <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
           ☰
@@ -39,7 +46,7 @@ export default function Navbar() {
           open ? "max-h-60 pt-4" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col gap-4 p-2">{links}</ul>
+        <ul className="flex flex-col gap-4 p-2">{navContents}</ul>
       </div>
     </nav>
   );
