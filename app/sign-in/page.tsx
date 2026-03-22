@@ -11,7 +11,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className="flex w-full min-h-screen justify-center items-center max-w-lg mx-auto p-4">
+    <div className="flex w-full min-h-[75vh] justify-center items-center max-w-lg mx-auto p-4">
       <div className="flex flex-col w-full gap-2 border border-border p-4 rounded">
         <h1 className="text-center text-2xl mb-4">Sign in with Email</h1>
         <form
