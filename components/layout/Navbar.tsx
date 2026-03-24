@@ -38,7 +38,7 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="sticky top-0 w-full p-2 border-b border-border bg-bg md:bg-bg/90 md:backdrop-blur">
+    <nav className="sticky top-0 w-full p-2 border-b border-border bg-background md:bg-background/90 md:backdrop-blur">
       <div className="flex items-center justify-between">
         <Link href="/" className="text-2xl">
           Next.js Example
@@ -52,7 +52,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`absolute left-0 right-0 overflow-hidden mt-2 transition-all duration-300 md:hidden border-b border-border bg-bg ${
+        className={`absolute left-0 right-0 overflow-hidden mt-2 transition-all duration-300 md:hidden border-b border-border bg-background ${
           open ? "max-h-60 pt-4" : "max-h-0"
         }`}
       >
