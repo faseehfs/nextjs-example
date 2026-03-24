@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "../ui/mode-toggle";
+import { Menu, X } from "lucide-react";
 
 const navContents = (
   <>
@@ -18,7 +19,6 @@ const navContents = (
     <Link className="hover:text-muted-foreground transition-all" href="/wip">
       WIP
     </Link>
-    <ModeToggle />
     <Button
       onClick={() => {
         signOut();
@@ -38,17 +38,26 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="sticky top-0 w-full p-2 border-b border-border bg-background md:bg-background/90 md:backdrop-blur">
+    <nav className="sticky top-0 w-full p-2 border-b border-border bg-background md:bg-background/90 md:backdrop-blur z-50">
       <div className="flex items-center justify-between">
         <Link href="/" className="text-2xl">
           Next.js Example
         </Link>
 
-        <ul className="hidden md:flex md:items-center gap-6">{navContents}</ul>
+        <div className="flex gap-4 items-center">
+          <ul className="hidden md:flex md:items-center gap-4">
+            {navContents}
+          </ul>
 
-        <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
-          ☰
-        </button>
+          <ModeToggle />
+          <button
+            className="inline-flex items-center justify-center rounded-md text-foreground hover:bg-accent hover:text-accent-foreground md:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle Menu"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       <div
