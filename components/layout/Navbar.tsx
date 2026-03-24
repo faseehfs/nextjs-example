@@ -7,6 +7,17 @@ import { signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "../ui/mode-toggle";
 import { Menu, X } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 const navContents = (
   <>
@@ -19,13 +30,29 @@ const navContents = (
     <Link className="hover:text-muted-foreground transition-all" href="/wip">
       WIP
     </Link>
-    <Button
-      onClick={() => {
-        signOut();
-      }}
-    >
-      Sign Out
-    </Button>
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <Button>Sign Out</Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Do you want to sign out?</AlertDialogTitle>
+          <AlertDialogDescription>
+            If you sign out, you will have to sign in again.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction
+            onClick={() => {
+              signOut();
+            }}
+          >
+            Sign Out
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   </>
 );
 
