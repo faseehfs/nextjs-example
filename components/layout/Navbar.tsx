@@ -8,7 +8,12 @@ import Button from "@/components/ui/Button";
 
 const navContents = (
   <>
-    <Link href="/home">Home</Link>
+    <Link className="hover:text-text-muted" href="/home">
+      Home
+    </Link>
+    <Link className="hover:text-text-muted" href="/wip">
+      WIP
+    </Link>
     <Button
       disableOnClick
       onClick={() => {
