@@ -27,6 +27,7 @@ export default function SignIn() {
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-4">
+            <h2>Sign in with Email</h2>
             <form className="flex flex-col sm:flex-row w-full gap-4">
               <Input
                 type="email"
