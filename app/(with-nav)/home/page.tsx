@@ -3,7 +3,7 @@
 import Article from "@/components/ui/Article";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [message, setMessage] = useState("Loading...");

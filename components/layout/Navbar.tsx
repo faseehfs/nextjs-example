@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 const navContents = (
   <>
@@ -15,7 +15,6 @@ const navContents = (
       WIP
     </Link>
     <Button
-      disableOnClick
       onClick={() => {
         signOut();
       }}

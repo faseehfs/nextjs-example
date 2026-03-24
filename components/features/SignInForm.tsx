@@ -3,7 +3,7 @@
 import GoogleIcon from "@/components/ui/icons/GoogleIcon";
 import GitHubIcon from "@/components/ui/icons/GitHubIcon";
 import Input from "@/components/ui/Input";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { signIn } from "next-auth/react";
 
 export default function SignInForm() {
@@ -30,7 +30,6 @@ export default function SignInForm() {
 
       <Button
         variant="secondary"
-        disableOnClick
         onClick={() => signIn("google", { redirectTo: "/home" })}
       >
         <GoogleIcon className="w-4 h-4" />
@@ -39,7 +38,6 @@ export default function SignInForm() {
 
       <Button
         variant="secondary"
-        disableOnClick
         onClick={() => signIn("github", { redirectTo: "/home" })}
       >
         <GitHubIcon className="w-4 h-4" /> Sign in with GitHub
