@@ -89,6 +89,9 @@ function NavContents() {
       <Link className="hover:text-muted-foreground transition-all" href="/wip">
         WIP
       </Link>
+      <Link className="hover:text-muted-foreground transition-all" href="/test">
+        Tests
+      </Link>
       <SignOutButton />
     </>
   );
