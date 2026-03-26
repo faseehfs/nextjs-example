@@ -91,7 +91,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      <NavOverlay className={cn("z-5", { hidden: !open })} />
+      <NavOverlay
+        className={cn("z-5", { [open ? "opacity-100" : "opacity-0"]: true })}
+      />
     </nav>
   );
 }
@@ -110,7 +112,7 @@ function NavOverlay({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed inset-0 md:hidden bg-black/10 backdrop-blur-xs",
+        "fixed inset-0 md:hidden bg-black/10 backdrop-blur-xs transition-all duration-300",
         className,
       )}
     ></div>
