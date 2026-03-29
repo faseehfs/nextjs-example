@@ -1,77 +1,35 @@
-import Hero from "./components/hero";
-import Feature from "@/app/components/feature";
-import ExternalLink from "@/components/ui/external-link";
-import Card from "@/app/components/card";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-import sweetHomeImage from "@/assets/sweet-home.png";
-import sourceCodeImage from "@/assets/source-code.png";
-import nextjsImage from "@/assets/next-js.png";
-import webSearchImage from "@/assets/web-search.png";
-import workingAtHomeImage from "@/assets/working-at-home.png";
-import imagesImage from "@/assets/images.png";
-import landingPageImage from "@/assets/landing-page.png";
-import waitingForYouImage from "@/assets/waiting-for-you.png";
+import Image from "next/image";
+import Link from "next/link";
+import FSImage from "@/assets/fs-nobg-cropped.png";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function LandingPage() {
   return (
-    <main className="bg-white">
-      <Hero />
-
-      <div className="mx-auto w-full max-w-4xl px-5">
-        <Feature
-          image={webSearchImage}
-          title="What is this?"
-          text="This is a Next.js application."
-        />
-
-        <hr className="text-border" />
-
-        <Feature
-          image={workingAtHomeImage}
-          title="Why did you make this?"
-          text="To learn Next.js"
-          reverse
-        />
-
-        <hr className="text-border" />
-
-        <Feature
-          image={imagesImage}
-          title="From where did you get these images?"
-        >
-          <ExternalLink href="https://undraw.co/">Undraw.co</ExternalLink>
-        </Feature>
-
-        <hr className="text-border" />
-
-        <Feature
-          image={landingPageImage}
-          title="What about the banner image?"
-          reverse
-        >
-          <ExternalLink href="https://pixabay.com/">Pixabay</ExternalLink>
-        </Feature>
-      </div>
-
-      <div className="flex flex-col gap-8 p-8 justify-center items-center w-full bg-gray-100">
-        <h1 className="text-center text-xl">What's in here</h1>
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-3 max-w-4xl">
-          <Card image={sweetHomeImage} title="Pages" />
-          <Card image={sourceCodeImage} title="Code" />
-          <Card image={nextjsImage} title="Next.js" />
-        </div>
-      </div>
-
-      <div className="mx-auto w-full max-w-4xl px-5">
-        <Feature image={waitingForYouImage} title="What should I do now?">
-          {" "}
-          <Link href="/home">
-            <Button>Open App</Button>
+    <div className="flex  w-full min-h-[75vh] justify-center items-center p-4">
+      <Card className="w-full max-w-sm">
+        <CardContent className="text-center">
+          <h1 className="text-lg mb-2 font-heading">
+            Welcome to Next.js Example!
+          </h1>
+          <p>
+            Hey, thanks for visiting. This is my Next.js example application.
+          </p>
+        </CardContent>
+        <CardFooter>
+          <Link href="/home" className="w-full">
+            <Button className="w-full">Open App</Button>
           </Link>
-        </Feature>
-      </div>
-    </main>
+        </CardFooter>
+      </Card>
+    </div>
   );
 }
