@@ -3,17 +3,16 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <header
-      className="flex flex-col justify-center items-center p-5 h-80 bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/barbaraalane-texture.jpg')" }}
+    <div
+      style={{ backgroundImage: "url('/images/csias-lighthouse.png')" }}
+      className="flex flex-col bg-cover bg-center justify-center items-center text-primary-foreground p-5 py-18 md:h-80"
     >
-      <h1 className="text-5xl text-center text-white">Landing Page</h1>
-      <p className="text-center text-white my-2">
-        Description of the website description of it hello there
-      </p>
+      <h1 className="text-4xl md:text-5xl text-center font-heading mb-4">
+        Next.js Example
+      </h1>
       <Link href="/home">
         <Button size="lg">Open App</Button>
       </Link>
-    </header>
+    </div>
   );
 }

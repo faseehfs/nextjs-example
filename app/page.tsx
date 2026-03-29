@@ -1,7 +1,7 @@
 import Hero from "./components/hero";
-import Feature from "@/components/ui/feature";
+import Feature from "@/app/components/feature";
 import ExternalLink from "@/components/ui/external-link";
-import CardSec from "@/components/ui/card-sec";
+import Card from "@/app/components/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -58,9 +58,9 @@ export default function LandingPage() {
       <div className="flex flex-col gap-8 p-8 justify-center items-center w-full bg-gray-100">
         <h1 className="text-center text-xl">What's in here</h1>
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-3 max-w-4xl">
-          <CardSec image={sweetHomeImage} title="Pages" />
-          <CardSec image={sourceCodeImage} title="Code" />
-          <CardSec image={nextjsImage} title="Next.js" />
+          <Card image={sweetHomeImage} title="Pages" />
+          <Card image={sourceCodeImage} title="Code" />
+          <Card image={nextjsImage} title="Next.js" />
         </div>
       </div>
 
