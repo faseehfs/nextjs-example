@@ -28,7 +28,7 @@ export default function SignIn() {
         <CardContent>
           <div className="flex flex-col gap-4">
             <h2>Sign in with Email</h2>
-            <form className="flex flex-col sm:flex-row w-full gap-4">
+            <form className="flex flex-col w-full gap-4">
               <Input
                 type="email"
                 name="email"
@@ -38,7 +38,6 @@ export default function SignIn() {
               />
               <Button
                 type="submit"
-                size="lg"
                 className="shrink-0 whitespace-nowrap"
                 disabled
               >
