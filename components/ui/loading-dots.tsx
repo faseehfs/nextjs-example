@@ -1,4 +1,4 @@
-export default function Spinner() {
+export default function LoadingDots() {
   return (
     <div className="flex space-x-2">
       <div className="h-3 w-3 animate-bounce rounded-full bg-primary [animation-delay:-0.3s]" />

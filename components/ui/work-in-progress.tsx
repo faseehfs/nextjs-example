@@ -1,4 +1,4 @@
-import Spinner from "../ui/spinner";
+import LoadingDots from "./loading-dots";
 
 export default function WorkInProgress() {
   return (
@@ -10,7 +10,7 @@ export default function WorkInProgress() {
         This page is currently work in progress. Please return later.
       </p>
       <br />
-      <Spinner />
+      <LoadingDots />
     </div>
   );
 }
