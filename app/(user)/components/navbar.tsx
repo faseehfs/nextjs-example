@@ -72,8 +72,17 @@ function NavContents() {
       <Link href="/home">
         <Button variant="ghost">Home</Button>
       </Link>
+      <Link href="/about">
+        <Button variant="ghost">About</Button>
+      </Link>
+      <Link href="/news">
+        <Button variant="ghost">News</Button>
+      </Link>
       <Link href="/test">
         <Button variant="ghost">Test</Button>
+      </Link>
+      <Link href="/others">
+        <Button variant="ghost">Others</Button>
       </Link>
     </>
   );

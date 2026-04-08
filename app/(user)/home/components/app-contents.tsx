@@ -14,22 +14,6 @@ export default function AppContents() {
     <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
       <Card>
         <CardHeader>
-          <CardTitle>WIP</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <CardDescription>
-            A reusable "Work-in-Progress" component to show that the page is
-            currently under development.
-          </CardDescription>
-        </CardContent>
-        <CardFooter>
-          <Link href="/wip">
-            <Button>Visit</Button>
-          </Link>
-        </CardFooter>
-      </Card>
-      <Card>
-        <CardHeader>
           <CardTitle>Tailwind Animations</CardTitle>
         </CardHeader>
         <CardContent>
@@ -42,6 +26,19 @@ export default function AppContents() {
           <Link href="/tailwind-animations">
             <Button>Visit</Button>
           </Link>
+        </CardFooter>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>WIP</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription>
+            Description of the feature. Leins skg ksen ke alk akks. Aing s king.
+          </CardDescription>
+        </CardContent>
+        <CardFooter>
+          <Button>Visit</Button>
         </CardFooter>
       </Card>
       <Card>
