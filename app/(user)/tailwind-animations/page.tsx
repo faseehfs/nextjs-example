@@ -10,7 +10,7 @@ import {
 
 export default function TailwindAnimations() {
   return (
-    <div className="flex flex-col gap-4 max-w-xl mx-auto mt-4">
+    <div className="flex flex-col gap-4 max-w-xl mx-auto mt-4 p-4">
       <Article>
         <h1>Tailwind animations</h1>
         <p>
