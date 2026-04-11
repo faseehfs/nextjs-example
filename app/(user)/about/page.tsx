@@ -9,8 +9,8 @@ export default function About() {
         <p>
           This is a Next.js application bootstrapped with{" "}
           <span className="font-mono">create-next-app</span>. It uses Auth.js
-          for authentication, Supabase for database and Shadcn for ui
-          components.
+          for authentication, Prisma Postgres as database, Prisma as ORM and
+          Shadcn for ui components.
         </p>
         <a href="https://github.com/faseehfs/nextjs-example">
           <Button variant="outline">View Source Code</Button>
