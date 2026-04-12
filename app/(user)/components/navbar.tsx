@@ -13,10 +13,19 @@ import UserMenu from "./user-menu";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [overlayVisible, setOverlayVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   useOnClickOutside(containerRef, () => setOpen(false));
+
+  useEffect(() => {
+    if (open) {
+      setOverlayVisible(true);
+    } else {
+      setTimeout(() => setOverlayVisible(false), 300);
+    }
+  }, [open]);
 
   useEffect(() => {
     setOpen(false);
@@ -59,11 +68,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      <NavOverlay
-        className={cn("z-5", {
-          [open ? "opacity-100" : "opacity-0 pointer-events-none"]: true,
-        })}
-      />
+      {overlayVisible && (
+        <NavOverlay
+          className={cn("z-5", {
+            [open ? "opacity-100" : "opacity-0"]: true,
+          })}
+        />
+      )}
     </nav>
   );
 }
