@@ -5,11 +5,12 @@ import { usePathname } from "next/navigation";
 import { SessionProvider } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "../../../components/ui/mode-toggle";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import useOnClickOutside from "@/hooks/use-on-click-outside";
 import { cn } from "@/lib/utils";
 import UserMenu from "./user-menu";
+import { navigationMenu, featureCards } from "../config/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -80,20 +81,54 @@ export default function Navbar() {
 }
 
 function NavContents() {
+  const [openMenu, setOpenMenu] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside(menuRef, () => setOpenMenu(false));
+
   return (
     <>
-      <Link href="/home">
-        <Button variant="ghost">Home</Button>
-      </Link>
-      <Link href="/about">
-        <Button variant="ghost">About</Button>
-      </Link>
-      <Link href="/news">
-        <Button variant="ghost">News</Button>
-      </Link>
-      <Link href="/test">
-        <Button variant="ghost">Test</Button>
-      </Link>
+      <div ref={menuRef} className="relative">
+        <Button
+          variant="ghost"
+          onClick={() => setOpenMenu(!openMenu)}
+          className="flex items-center gap-1"
+        >
+          Features
+          <ChevronDown
+            className={cn("h-4 w-4 transition-transform", {
+              "rotate-180": openMenu,
+            })}
+          />
+        </Button>
+
+        {openMenu && (
+          <div className="absolute left-0 mt-4 w-48 bg-card border border-border rounded-md shadow-lg p-2 z-50">
+            {featureCards.map((card) => (
+              <Link key={card.title} href={card.href || "#"}>
+                <div
+                  className={cn(
+                    "px-3 py-2 rounded hover:bg-accent transition-colors cursor-pointer",
+                    !card.href && "opacity-50 cursor-not-allowed",
+                  )}
+                >
+                  <div className="font-medium text-sm">{card.title}</div>
+                  {card.description && (
+                    <div className="text-xs text-muted-foreground">
+                      {card.description}
+                    </div>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+      {navigationMenu.map((item) => (
+        <Link key={item.title} href={item.href}>
+          <Button variant="ghost">{item.title}</Button>
+        </Link>
+      ))}
     </>
   );
 }

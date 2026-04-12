@@ -8,21 +8,12 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { featureCards } from "../../config/navigation";
 
 export default function AppContents() {
   const cards = [
-    {
-      title: "Tailwind Animations",
-      description:
-        "Tailwind provides utility classes to animate your components without touching CSS.",
-      href: "/feature/tailwind-animations",
-    },
-    {
-      title: "Posts",
-      description: "Write your own posts or read posts written by other users.",
-      href: "/feature/post",
-    },
-    ...Array(5).fill({
+    ...featureCards,
+    ...Array(4).fill({
       title: "Coming soon",
       description:
         "I look around and, Sin city's cold and empty... No one's around to judge me...",
