@@ -1,29 +1,10 @@
-export interface NavigationItem {
+export interface Feature {
   title: string;
   description?: string;
   href: string | null;
 }
 
-export const navigationMenu: NavigationItem[] = [
-  {
-    title: "Home",
-    href: "/home",
-  },
-  {
-    title: "About",
-    href: "/about",
-  },
-  {
-    title: "News",
-    href: "/news",
-  },
-  {
-    title: "Test",
-    href: "/test",
-  },
-];
-
-export const features: NavigationItem[] = [
+export const features: Feature[] = [
   {
     title: "Tailwind Animations",
     description:

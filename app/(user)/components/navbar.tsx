@@ -10,7 +10,7 @@ import Link from "next/link";
 import useOnClickOutside from "@/hooks/use-on-click-outside";
 import { cn } from "@/lib/utils";
 import UserMenu from "./user-menu";
-import { navigationMenu, features } from "../config/navigation";
+import { features } from "../config/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -83,12 +83,19 @@ export default function Navbar() {
 function NavContents() {
   return (
     <>
+      <Link href="/home">
+        <Button variant="ghost">Home</Button>
+      </Link>
+      <Link href="/about">
+        <Button variant="ghost">About</Button>
+      </Link>
       <FeaturesDropdown />
-      {navigationMenu.map((item) => (
-        <Link key={item.title} href={String(item.href)}>
-          <Button variant="ghost">{item.title}</Button>
-        </Link>
-      ))}
+      <Link href="/news">
+        <Button variant="ghost">News</Button>
+      </Link>
+      <Link href="/test">
+        <Button variant="ghost">Test</Button>
+      </Link>
     </>
   );
 }
