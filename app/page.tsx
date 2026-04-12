@@ -14,7 +14,7 @@ import {
 
 export default function LandingPage() {
   return (
-    <div className="flex  w-full min-h-[75vh] justify-center items-center p-4">
+    <div className="flex  w-full min-h-screen justify-center items-center p-4">
       <Card className="w-full max-w-sm text-center">
         <CardTitle>Welcome to Next.js Example!</CardTitle>
         <CardDescription>
