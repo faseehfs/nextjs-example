@@ -21,13 +21,15 @@ export default function CreatePostPage() {
 
     try {
       await createPost({ title, content });
+      setIsSubmitted(true);
       // Redirect
       router.push("/feature/post");
     } catch (error) {
       console.error("Failed to create post:", error);
-      alert("Failed to create post. Please try again.");
+      alert(
+        error instanceof Error ? error.message : "An unknown error occurred",
+      );
     } finally {
-      setIsSubmitted(true);
       setIsSubmitting(false);
     }
   };
