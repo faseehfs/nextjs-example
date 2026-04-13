@@ -1,22 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import prisma from "@/lib/prisma";
-import { Delete, Trash, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CircleCheckBig } from "lucide-react";
-import { deletePost } from "./create/actions";
+import { CircleCheckBig, ShieldUser } from "lucide-react";
 import { auth } from "@/auth";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import {
   Tooltip,
   TooltipContent,
@@ -141,7 +129,7 @@ function AdminBadge() {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <CircleCheckBig className="size-4 text-chart-3" />
+        <ShieldUser className="size-4 text-chart-1" />
       </TooltipTrigger>
       <TooltipContent>Admin</TooltipContent>
     </Tooltip>
