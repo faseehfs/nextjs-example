@@ -5,6 +5,8 @@ import { Delete, Trash, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CircleCheckBig } from "lucide-react";
+import { deletePost } from "./create/actions";
+import { auth } from "@/auth";
 import {
   Dialog,
   DialogClose,
@@ -21,8 +23,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { DeletePostDialog } from "./components/delete-post-dialog";
 
 export default async function PostPage() {
+  const session = await auth();
+
   const posts = await prisma.post.findMany({
     where: {
       isApproved: true,
@@ -105,7 +110,10 @@ export default async function PostPage() {
                     )}
                   </div>
                   <div className="flex items-center gap-2">
-                    <DeletePostDialog />
+                    <DeletePostDialog
+                      postId={post.id}
+                      isOwner={post.authorId === session?.user?.id}
+                    />
                     {new Date(post.createdAt).toLocaleString()}
                   </div>
                 </div>
@@ -137,30 +145,5 @@ function AdminBadge() {
       </TooltipTrigger>
       <TooltipContent>Admin</TooltipContent>
     </Tooltip>
-  );
-}
-
-function DeletePostDialog() {
-  return (
-    <Dialog>
-      <DialogTrigger>
-        <Trash className="size-4" />
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Delete this post</DialogTitle>
-          <DialogDescription>
-            Post deletion is managed by the site administrator. Please direct
-            your request to{" "}
-            <a href="mailto:faseeh1080@gmail.com">faseeh1080@gmail.com</a>.
-          </DialogDescription>
-        </DialogHeader>
-        <DialogFooter>
-          <DialogClose asChild>
-            <Button>Ok</Button>
-          </DialogClose>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
   );
 }
