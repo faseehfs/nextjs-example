@@ -66,8 +66,7 @@ model VerificationToken {
  
   @@id([identifier, token])
 }
- 
-// Optional for WebAuthn support
+
 model Post {
   id        String   @id @default(cuid())
   title     String
@@ -78,6 +77,7 @@ model Post {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  featured Boolean @default(false)
 }
 
 // Optional for WebAuthn support
