@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import prisma from "@/lib/prisma";
-import { Trash, X } from "lucide-react";
+import { Delete, Trash, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CircleCheckBig } from "lucide-react";
@@ -105,29 +105,7 @@ export default async function PostPage() {
                     )}
                   </div>
                   <div className="flex items-center gap-2">
-                    <Dialog>
-                      <DialogTrigger>
-                        <Trash className="size-4" />
-                      </DialogTrigger>
-                      <DialogContent>
-                        <DialogHeader>
-                          <DialogTitle>Delete this post</DialogTitle>
-                          <DialogDescription>
-                            Post deletion is managed by the site administrator.
-                            Please direct your request to{" "}
-                            <a href="mailto:faseeh1080@gmail.com">
-                              faseeh1080@gmail.com
-                            </a>
-                            .
-                          </DialogDescription>
-                        </DialogHeader>
-                        <DialogFooter>
-                          <DialogClose asChild>
-                            <Button>Ok</Button>
-                          </DialogClose>
-                        </DialogFooter>
-                      </DialogContent>
-                    </Dialog>
+                    <DeletePostDialog />
                     {new Date(post.createdAt).toLocaleString()}
                   </div>
                 </div>
@@ -159,5 +137,30 @@ function AdminBadge() {
       </TooltipTrigger>
       <TooltipContent>Admin</TooltipContent>
     </Tooltip>
+  );
+}
+
+function DeletePostDialog() {
+  return (
+    <Dialog>
+      <DialogTrigger>
+        <Trash className="size-4" />
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Delete this post</DialogTitle>
+          <DialogDescription>
+            Post deletion is managed by the site administrator. Please direct
+            your request to{" "}
+            <a href="mailto:faseeh1080@gmail.com">faseeh1080@gmail.com</a>.
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button>Ok</Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }
