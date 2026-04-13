@@ -103,6 +103,14 @@ export default async function PostPage() {
                         <TooltipContent>Featured</TooltipContent>
                       </Tooltip>
                     )}
+                    {post.author.email === "faseeh1080@gmail.com" && (
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <CircleCheckBig className="size-4 text-chart-3" />
+                        </TooltipTrigger>
+                        <TooltipContent>Admin</TooltipContent>
+                      </Tooltip>
+                    )}
                   </div>
                   <div className="flex items-center gap-2">
                     <Dialog>
