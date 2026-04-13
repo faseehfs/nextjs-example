@@ -64,6 +64,8 @@ function UserMenuContent() {
 
   return (
     <div className="flex flex-col gap-4">
+      {/* Hero */}
+
       <div className="flex gap-4 pb-4 border-b border-border">
         {session?.user?.image && (
           <Image
@@ -82,11 +84,13 @@ function UserMenuContent() {
           <p className="text-muted-foreground">{session?.user?.email}</p>
         </div>
       </div>
-      <p>
-        This is your User Menu. There isn't much here besides the sign out
-        button, but I’ll be adding more soon.
-      </p>
-      <SignOutButton />
+
+      {/* Actions */}
+
+      <div className="flex flex-col">
+        <Button variant="ghost">Change Username</Button>
+        <SignOutButton />
+      </div>
     </div>
   );
 }
