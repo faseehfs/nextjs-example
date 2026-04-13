@@ -87,7 +87,7 @@ export default async function PostPage() {
                       </DialogTrigger>
                       <DialogContent>
                         <DialogHeader>
-                          <DialogTitle>Invalid operation</DialogTitle>
+                          <DialogTitle>Delete this post</DialogTitle>
                           <DialogDescription>
                             Post deletion is managed by the site administrator.
                             Please direct your request to{" "}
