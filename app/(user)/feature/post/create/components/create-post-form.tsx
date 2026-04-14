@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { createPost } from "../actions";
@@ -39,6 +45,10 @@ export default function CreatePostForm() {
     <Card className="w-full">
       <CardHeader>
         <CardTitle>Create New Post</CardTitle>
+        <CardDescription>
+          Share what’s new or noteworthy to you today. Focus on recent events,
+          ideas, or updates you want others to see.
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
