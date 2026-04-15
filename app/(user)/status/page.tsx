@@ -1,13 +1,22 @@
 import { Article, ArticleContainer } from "@/components/layout/article";
-import ApiMessage from "./_components/api-message";
+import { getCounts } from "./actions";
 
-export default function Test() {
+export default async function Test() {
+  const { userCount, postCount } = await getCounts();
+
   return (
     <ArticleContainer>
       <Article>
         <h1>Status</h1>
-        <ApiMessage />
+        <p>
+          See the real-time health and availability of a website or its
+          individual services (e.g., API, database, login).
+        </p>
       </Article>
+      <div className="rounded-xl bg-gray-800 p-4 mt-4 text-yellow-200">
+        <p>Number of registered users: {userCount}</p>
+        <p>Number of uploaded posts: {postCount}</p>
+      </div>
     </ArticleContainer>
   );
 }
