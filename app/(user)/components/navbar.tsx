@@ -10,7 +10,7 @@ import Link from "next/link";
 import useOnClickOutside from "@/hooks/use-on-click-outside";
 import { cn } from "@/lib/utils";
 import UserMenu from "./user-menu";
-import { features } from "../config/navigation";
+import features from "../config/feature";
 
 export default function Navbar() {
   const { data: session } = useSession();

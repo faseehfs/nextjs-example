@@ -1,10 +1,10 @@
-export interface Feature {
+interface Feature {
   title: string;
   description?: string;
   href: string | null;
 }
 
-export const features: Feature[] = [
+const features: Feature[] = [
   {
     title: "Tailwind Animations",
     description:
@@ -17,3 +17,5 @@ export const features: Feature[] = [
     href: "/feature/post",
   },
 ];
+
+export default features;
