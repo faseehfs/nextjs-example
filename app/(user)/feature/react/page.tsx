@@ -1,6 +1,12 @@
+"use client";
+
 import { Article, ArticleContainer } from "@/components/layout/article";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function ReactPage() {
+  const [sec, setSec] = useState(0);
+
   return (
     <ArticleContainer>
       <Article>
@@ -11,6 +17,9 @@ export default function ReactPage() {
           LikeButton, and Video. Then combine them into entire screens, pages,
           and apps.
         </p>
+        <hr />
+        <p>React react react react</p>
+        <Button>Ok</Button>
       </Article>
     </ArticleContainer>
   );

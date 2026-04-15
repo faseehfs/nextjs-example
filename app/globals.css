@@ -126,3 +126,7 @@
   --color-loading-skeleton: var(--loading-skeleton);
   --color-admin-badge: var(--admin-badge);
 }
+
+hr {
+  color: var(--border);
+}
