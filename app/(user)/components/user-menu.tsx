@@ -41,7 +41,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { changeUsername } from "./actions";
+import { changeUsername } from "../(landing)/actions";
 import Link from "next/link";
 
 export default function UserMenu() {
