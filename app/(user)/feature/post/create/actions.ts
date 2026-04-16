@@ -16,8 +16,12 @@ export async function createPost(data: { title: string; content: string }) {
   const content = data.content.trim();
   const newlineCount = (content.match(/\n/g) || []).length;
 
-  if (title.length < 1 || content.length < 10) {
-    throw new Error("Title or content is too short.");
+  if (title.length < 1) {
+    throw new Error("Title is required.");
+  }
+
+  if (content.length < 10) {
+    throw new Error("Content is less than 10 characters.");
   }
 
   if (title.length > MAX_TITLE_CHARS) {

@@ -20,6 +20,7 @@ export default function CreatePostForm() {
   const [content, setContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<null | string>(null);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -33,7 +34,7 @@ export default function CreatePostForm() {
       router.push("/feature/post");
     } catch (error) {
       console.error("Failed to create post:", error);
-      alert(
+      setErrorMessage(
         error instanceof Error ? error.message : "An unknown error occurred",
       );
     } finally {
@@ -51,7 +52,7 @@ export default function CreatePostForm() {
             ideas, or updates you want others to see. Your post will be
             displayed first until someone else publishes a newer one.
           </p>
-          <p className="mt-2 text-destructive">
+          <p className="mt-2 text-foreground">
             Note: Your username and profile picture will be visible.
           </p>
         </CardDescription>
@@ -88,10 +89,17 @@ export default function CreatePostForm() {
             />
           </div>
 
+          {errorMessage && (
+            <p className="text-destructive">Error: {errorMessage}</p>
+          )}
+
           <Button
             type="submit"
             disabled={
-              isSubmitting || isSubmitted || !title.trim() || !content.trim()
+              isSubmitting ||
+              isSubmitted ||
+              !title.trim() ||
+              content.trim().length < 10
             }
           >
             {isSubmitting || isSubmitted ? (
