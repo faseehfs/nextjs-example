@@ -143,10 +143,10 @@ function ChangeUsernameButton() {
         </Button>
       </DialogTrigger>
 
-      <DialogContent>
+      <DialogContent aria-describedby="change-username-description">
         <DialogHeader>
           <DialogTitle>Change username</DialogTitle>
-          <DialogDescription>
+          <DialogDescription id="change-username-description">
             This changes how you are displayed on this website.
           </DialogDescription>
         </DialogHeader>
@@ -332,10 +332,10 @@ function UploadProfileImageButton() {
         </Button>
       </DialogTrigger>
 
-      <DialogContent>
+      <DialogContent aria-describedby="upload-image-description">
         <DialogHeader>
           <DialogTitle>Upload Profile Image</DialogTitle>
-          <DialogDescription>
+          <DialogDescription id="upload-image-description">
             Choose a new profile image. JPEG, PNG, WebP, and GIF up to 100KB are
             supported. The image will be cropped to a square.
           </DialogDescription>
