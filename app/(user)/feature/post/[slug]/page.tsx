@@ -33,8 +33,8 @@ export default async function PostPage({
         <Image
           src={String(post.author.image)}
           alt="Author Image"
-          width={125}
-          height={125}
+          width={71}
+          height={71}
           className="rounded-full"
         />
         <Link href="/feature/post">
