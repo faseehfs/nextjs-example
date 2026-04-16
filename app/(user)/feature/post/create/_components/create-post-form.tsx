@@ -46,9 +46,14 @@ export default function CreatePostForm() {
       <CardHeader>
         <CardTitle>Create New Post</CardTitle>
         <CardDescription>
-          Share what’s new or noteworthy to you today. Focus on recent events,
-          ideas, or updates you want others to see. Your post will be displayed
-          first until someone else publishes a newer one.
+          <p>
+            Share what’s new or noteworthy to you today. Focus on recent events,
+            ideas, or updates you want others to see. Your post will be
+            displayed first until someone else publishes a newer one.
+          </p>
+          <p className="mt-2 text-destructive">
+            Note: Your username and profile picture will be visible.
+          </p>
         </CardDescription>
       </CardHeader>
       <CardContent>
