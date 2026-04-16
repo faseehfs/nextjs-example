@@ -3,7 +3,7 @@ import Link from "next/link";
 import prisma from "@/lib/prisma";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CircleCheckBig, ShieldUser } from "lucide-react";
+import { ArrowUpRight, CircleCheckBig, ShieldUser } from "lucide-react";
 import { auth } from "@/auth";
 import {
   Tooltip,
@@ -103,6 +103,9 @@ export default async function PostPage() {
                       isOwner={post.authorId === session?.user?.id}
                     />
                     {new Date(post.createdAt).toLocaleString()}
+                    <Link href={`/feature/post/${post.id}`}>
+                      <ArrowUpRight className="size-4" />
+                    </Link>
                   </div>
                 </div>
               </CardContent>
