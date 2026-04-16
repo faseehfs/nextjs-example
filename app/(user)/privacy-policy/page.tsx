@@ -1,4 +1,5 @@
 import { Article, ArticleContainer } from "@/components/layout/article";
+import ExternalLink from "@/components/ui/external-link";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -39,7 +40,11 @@ export default function PrivacyPolicyPage() {
         <h3>4. Your rights</h3>
         <p>
           If you wish to have your account or posts deleted, please contact us
-          at [Insert Your Contact Email].
+          at{" "}
+          <ExternalLink href="mailto:faseeh1080@gmail.com">
+            faseeh1080@gmail.com
+          </ExternalLink>
+          .
         </p>
       </Article>
     </ArticleContainer>
