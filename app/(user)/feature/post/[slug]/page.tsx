@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
 import Image from "next/image";
+import { TriangleAlert } from "lucide-react";
 
 export default async function PostPage({
   params,
@@ -26,25 +27,42 @@ export default async function PostPage({
       <Article>
         <h1>{post!.title}</h1>
         <p className="text-muted-foreground text-sm">By {post.author.name}</p>
+        {!post.isApproved && (
+          <div className="flex gap-2 text-destructive items-center">
+            <TriangleAlert className="size-4" />
+            <p>
+              Warning: This post was removed from the public feed. You better{" "}
+              <Link href="/feature/post" className="underline">
+                go back
+              </Link>
+              .
+            </p>
+          </div>
+        )}
         <p>{post.content}</p>
-        <hr />
-        <h2>Thanks for reading</h2>
-        <p>
-          Big thanks to <span className="font-bold">{post.author.name}</span>{" "}
-          for his contribution!
-        </p>
-        <Image
-          src={String(post.author.image)}
-          alt="Author Image"
-          width={71}
-          height={71}
-          className="rounded-full"
-        />
-        <Link href="/feature/post">
-          <Button variant="link" className="px-0">
-            Read More
-          </Button>
-        </Link>
+        {post.isApproved && (
+          <>
+            <hr />
+            <h2>Thanks for reading</h2>
+            <p>
+              Big thanks to{" "}
+              <span className="font-bold">{post.author.name}</span> for his
+              contribution!
+            </p>
+            <Image
+              src={String(post.author.image)}
+              alt="Author Image"
+              width={71}
+              height={71}
+              className="rounded-full"
+            />
+            <Link href="/feature/post">
+              <Button variant="link" className="px-0">
+                Read More
+              </Button>
+            </Link>
+          </>
+        )}
       </Article>
     </ArticleContainer>
   );
