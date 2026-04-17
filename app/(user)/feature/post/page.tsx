@@ -111,6 +111,13 @@ export default async function PostPage() {
               </CardContent>
             </Card>
           ))}
+          <p className="text-sm text-muted-foreground text-center">
+            Only recent posts are shown here. Click{" "}
+            <Link href="/feature/post/removed" className="underline">
+              here
+            </Link>{" "}
+            to view removed posts.
+          </p>
         </div>
       )}
     </ArticleContainer>
