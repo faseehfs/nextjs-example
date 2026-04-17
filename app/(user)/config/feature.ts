@@ -21,6 +21,11 @@ const features: Feature[] = [
     description: "Check the status of the website and its services.",
     href: "/feature/status",
   },
+  {
+    title: "Data Table",
+    description: "Display data in a table format.",
+    href: "/feature/data-table",
+  },
 ];
 
 export default features;
