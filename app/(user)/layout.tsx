@@ -16,7 +16,7 @@ export default async function WithNavLayout({
   // }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col w-full h-full">
       <SessionProvider>
         <Navbar />
         <div className="flex-1">{children}</div>
