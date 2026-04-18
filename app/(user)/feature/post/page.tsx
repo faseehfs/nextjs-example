@@ -139,7 +139,7 @@ function AdminBadge() {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <ShieldUser className="size-4 text-admin-badge" />
+        <ShieldUser className="size-4 text-blue-600 dark:text-blue-400" />
       </TooltipTrigger>
       <TooltipContent>Admin</TooltipContent>
     </Tooltip>

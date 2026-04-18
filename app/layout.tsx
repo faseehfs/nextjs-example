@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`bg-background text-foreground ${nunito.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${nunito.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
           <TooltipProvider>{children}</TooltipProvider>
