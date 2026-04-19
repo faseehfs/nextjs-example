@@ -37,11 +37,12 @@ export default function Navbar() {
           <ul className="hidden md:flex md:items-center mx-2">
             <NavContents />
           </ul>
-          <div className="flex gap-4 ml-auto items-center">
+          <div className="flex gap-2 ml-auto items-center">
             <ModeToggle />
             <Button
               variant="outline"
               className="md:hidden"
+              size="icon"
               onClick={() => setOpen(!open)}
             >
               {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

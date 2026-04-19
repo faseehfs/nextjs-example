@@ -44,30 +44,33 @@ import { Input } from "@/components/ui/input";
 import { changeUsername, updateProfileImage } from "../(landing)/actions";
 import Link from "next/link";
 import { Camera, Loader2, LogOut, UserPen } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function UserMenu() {
   const { data: session, status } = useSession();
 
   return (
     <Drawer direction="right">
-      <DrawerTrigger asChild>
-        {status === "loading" ? (
-          <div className="size-8 rounded-full bg-loading-skeleton animate-pulse" />
-        ) : !session ? (
-          <Link href="/sign-in">
-            <Button>Sign In</Button>
-          </Link>
-        ) : (
-          <Image
-            src={String(session?.user?.image)}
-            width={240}
-            height={240}
-            alt="User Avatar"
-            referrerPolicy="no-referrer"
-            className="size-8 rounded-full border"
-          />
-        )}
-      </DrawerTrigger>
+      {status === "loading" || session ? (
+        <DrawerTrigger asChild>
+          {status === "loading" ? (
+            <Skeleton className="size-8 rounded-full border" />
+          ) : (
+            <Image
+              src={String(session?.user?.image)}
+              width={240}
+              height={240}
+              alt="User Avatar"
+              referrerPolicy="no-referrer"
+              className="size-8 rounded-full border"
+            />
+          )}
+        </DrawerTrigger>
+      ) : (
+        <Link href="/sign-in">
+          <Button>Sign In</Button>
+        </Link>
+      )}
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle className="hidden">User menu</DrawerTitle>
