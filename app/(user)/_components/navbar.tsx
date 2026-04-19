@@ -17,7 +17,7 @@ export default function Navbar() {
   const { data: session } = useSession();
 
   const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLUListElement>(null);
   const pathname = usePathname();
 
   useOnClickOutside(containerRef, () => setOpen(false));
@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 w-full z-50">
-      <div ref={containerRef}>
+      <div>
         <div className="relative flex items-center justify-start bg-card md:border-b border-border md:bg-card/90 md:backdrop-blur p-2 z-10">
           <Link href="/" className="text-2xl font-bold font-heading">
             Next.js Example
@@ -62,7 +62,7 @@ export default function Navbar() {
               transition={{ duration: 0.28, ease: "easeInOut" }}
               className="absolute inset-x-0 z-8 overflow-hidden border-b border-border bg-card md:hidden"
             >
-              <ul className="flex flex-col p-2 pb-4">
+              <ul className="flex flex-col p-2 pb-4" ref={containerRef}>
                 <NavContents />
               </ul>
             </motion.div>
