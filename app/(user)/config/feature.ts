@@ -26,9 +26,9 @@ const features: Feature[] = [
     href: "/feature/data-table",
   },
   {
-    title: "Playground",
-    description: "Things are a bit messy here.",
-    href: "/feature/playground",
+    title: "Image Input",
+    description: "Demonstration of image input.",
+    href: "/feature/image-input",
   },
 ];
 
