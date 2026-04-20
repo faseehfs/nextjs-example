@@ -14,22 +14,42 @@ export default function PlaygroundPage() {
       <Article>
         <h1>Image input</h1>
         <p>
-          Inputs can accept files as well as text. The below input acceps a file
-          of type jpeg, png, webp, or gif.
+          <code>&lt;Input /&gt;</code> can accept files as well as text. The
+          below input acceps a file of type jpeg, png, webp, or gif. An{" "}
+          <code>&lt;Input /&gt;</code> of type <code>file</code> stores an
+          object of type <code>FileList</code>, which contains objects of type{" "}
+          <code>File</code>. The first file can be accessed by{" "}
+          <code>inputElement.files[0]</code>.
+        </p>
+
+        <p>
+          The input has an <code>onChange</code> handler that updates the{" "}
+          <code>imgSrc</code> state variable. Always use{" "}
+          <code>(prev) =&gt; &#123;&#125;</code> for this purpose.
         </p>
         <Input
           type="file"
           accept="image/jpeg,image/png,image/webp,image/gif"
           className="max-w-sm"
+          aria-label="Select an image"
           onChange={(e) => {
-            setImgSrc(URL.createObjectURL(e.target.files?.[0]!));
+            const file = e.target.files?.[0];
+
+            setImgSrc((prev) => {
+              if (prev) URL.revokeObjectURL(prev);
+              return file ? URL.createObjectURL(file) : null;
+            });
           }}
         />
         <p>
-          An <code>&lt;Input /&gt;</code> of type <code>file</code> stores an
-          object of type <code>FileList</code>, which contains objects of type{" "}
-          <code>File</code>. The first file can be accessed by{" "}
-          <code>inputElement.files[0]</code>.
+          The preview below works by creating a temporary local URL that points
+          to the file data stored in memory (or a browser-managed temporary
+          store) using <code>URL.createObjectURL(file)</code>. The{" "}
+          <code>src</code> attribute of the <code>Image</code> is set to our{" "}
+          <code>imgSrc</code> state variable. It should be noted that every call
+          to <code>URL.createObjectURL</code> allocates memory. You should
+          revoke the previous URL using <code>URL.revokeObjectURL</code> before
+          creating a new one in the <code>onChange</code> handler.
         </p>
         {imgSrc ? (
           <Image
@@ -44,11 +64,6 @@ export default function PlaygroundPage() {
             <p className="text-muted-foreground text-sm">No image selected</p>
           </div>
         )}
-        <p>
-          The above preview works by creating a temporary local URL that points
-          to the file data stored in memory (or a browser-managed temporary
-          store) using <code>URL.createObjectURL(file)</code>.
-        </p>
       </Article>
     </ArticleContainer>
   );
