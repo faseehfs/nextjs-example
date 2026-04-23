@@ -68,10 +68,14 @@ export default async function PostPage({
           </>
         )}
 
-        <DeletePostDialog
-          postId={post.id}
-          isOwner={post.authorId === session?.user?.id}
-        />
+        {session?.user?.id === post.author.id && (
+          <>
+            <p>
+              You are the owner of this post. So you can delete it if you want.
+            </p>
+            <DeletePostDialog postId={post.id} />
+          </>
+        )}
       </Article>
     </ArticleContainer>
   );
