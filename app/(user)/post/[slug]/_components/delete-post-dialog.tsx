@@ -12,8 +12,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { deletePost } from "../actions";
-import { useRouter } from "next/navigation";
+import { deletePost } from "./actions";
+import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
 
@@ -32,8 +32,9 @@ export function DeletePostDialog({
     setIsPending(true);
     try {
       await deletePost({ postId });
-      router.refresh();
+      redirect("/post");
     } finally {
+      router.refresh();
     }
   };
 

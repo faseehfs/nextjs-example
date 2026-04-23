@@ -98,7 +98,7 @@ export default async function PostPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     {new Date(post.createdAt).toLocaleString()}
-                    <Link href={`/${post.id}`}>
+                    <Link href={`/post/${post.id}`}>
                       <ArrowUpRight className="size-4" />
                     </Link>
                   </div>
@@ -108,7 +108,7 @@ export default async function PostPage() {
           ))}
           <p className="text-sm text-muted-foreground text-center">
             Only recent posts are shown here. Click{" "}
-            <Link href="/removed" className="underline">
+            <Link href="/post/removed" className="underline">
               here
             </Link>{" "}
             to view removed posts.
