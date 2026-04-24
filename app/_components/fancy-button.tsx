@@ -24,8 +24,9 @@ const FancyButton = ({ children }: FancyButtonProps) => {
         className={cn(
           "relative overflow-hidden transition-all duration-300",
           "bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500",
-          "hover:scale-105 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]",
+          "hover:scale-105",
           "active:scale-95",
+          "shadow-lg",
         )}
       >
         {/* Shimmer Effect */}
