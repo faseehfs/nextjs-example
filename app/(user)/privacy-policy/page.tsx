@@ -1,5 +1,4 @@
 import { Prose, ProseContainer } from "@/components/typography/prose";
-import ExternalLink from "@/components/ui/external-link";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -40,10 +39,7 @@ export default function PrivacyPolicyPage() {
         <h3>4. Your rights</h3>
         <p>
           If you wish to have your account deleted, please contact us at{" "}
-          <ExternalLink href="mailto:faseeh1080@gmail.com">
-            faseeh1080@gmail.com
-          </ExternalLink>
-          .
+          <a href="mailto:faseeh1080@gmail.com">faseeh1080@gmail.com</a>.
         </p>
       </Prose>
     </ProseContainer>
