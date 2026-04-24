@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import { Nunito, Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
-
-const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-});
+import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="w-full h-dvh" suppressHydrationWarning>
       <body
-        className={`w-full h-full ${nunito.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(
+          "w-full h-full antialiased",
+          geistSans.variable, // This allows us to use --font-geist-sans variable in our CSS
+          geistMono.variable, // This allows us to use --font-geist-mono variable in our CSS
+        )}
       >
         <ThemeProvider>
           <TooltipProvider>{children}</TooltipProvider>
