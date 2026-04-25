@@ -46,12 +46,12 @@ export default async function PostPage({
         <p style={{ whiteSpace: "pre-line" }}>{post.content}</p>
         {post.isApproved && (
           <>
-            <Separator className="my-4" />
+            <hr />
             <h2>Thanks for reading</h2>
             <p>
               Big thanks to{" "}
               <span className="font-bold">{post.author.name}</span> for his
-              contribution!
+              contribution! Click <Link href="/post">here</Link> to read more posts.
             </p>
             <Image
               src={String(post.author.image)}
@@ -60,11 +60,6 @@ export default async function PostPage({
               height={71}
               className="rounded-full border"
             />
-            <Link href="/post">
-              <Button variant="link" className="px-0">
-                Read More
-              </Button>
-            </Link>
           </>
         )}
 
