@@ -53,9 +53,14 @@ export async function POST(request: Request) {
       access: "public",
     });
 
-    // Delete old profile picture if exists
+    // Delete old profile picture
     if (session.user.image) {
-      await del(session.user.image);
+      try {
+        await del(session.user.image);
+      } catch {
+        // Ignore error: For the first login, the profile image is stored in
+        // the OAuth provider (e.g., Google) and not in our Vercel Blob storage.
+      }
     }
 
     return NextResponse.json({ url: blob.url });
