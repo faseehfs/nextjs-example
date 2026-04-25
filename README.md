@@ -4,7 +4,8 @@
 
 ## Notes
 
-Run `npx prisma generate` to generate the prisma client.
+1. Run `npx prisma generate` to generate the prisma client.
+2. Run `npx vercel env pull` to download environment variables.
 
 ## Tips
 
