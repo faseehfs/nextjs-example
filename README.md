@@ -2,6 +2,10 @@
 
 🔥 See it in action: <https://nextjs-example-six-nu.vercel.app/>
 
+## Notes
+
+Run `npx prisma generate` to generate the prisma client.
+
 ## Tips
 
 The following VS Code configuration ensures the extension recognizes and provides autocomplete suggestions for classes nested within functions like `cva` or `cn`. Without it, IntelliSense will only trigger in standard `className` strings.
