@@ -17,7 +17,7 @@ export default function Loading() {
 
       {/* Posts list */}
       <div className="grid gap-4">
-        {Array.from({ length: 5 }).map((_, i) => (
+        {Array.from({ length: 3 }).map((_, i) => (
           <Card key={i} className="overflow-hidden">
             <CardHeader>
               <CardTitle>
