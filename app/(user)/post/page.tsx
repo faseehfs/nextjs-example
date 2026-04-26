@@ -3,15 +3,10 @@ import Link from "next/link";
 import prisma from "@/lib/prisma";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CircleCheckBig, ShieldUser } from "lucide-react";
 import { auth } from "@/auth";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils";
 import { ProseContainer } from "@/components/typography/prose";
+import { AdminBadge, FeaturedBadge } from "@/components/ui/badges";
+import { Role } from "@/prisma/src/generated/prisma/enums";
 
 export default async function PostPage() {
   const session = await auth();
@@ -90,8 +85,8 @@ export default async function PostPage() {
                       </div>
                     )}
                     <span>By {post.author?.name ?? "Unknown author"}</span>
+                    {post.author.role === Role.ADMIN && <AdminBadge />}
                     {post.featured && <FeaturedBadge />}
-                    {/* {post.author.email === adminEmail && <AdminBadge />} */}
                   </div>
                   <div className="flex items-center justify-between md:justify-end gap-2">
                     {new Date(post.createdAt).toLocaleString()}
@@ -115,27 +110,5 @@ export default async function PostPage() {
         </div>
       )}
     </ProseContainer>
-  );
-}
-
-function FeaturedBadge() {
-  return (
-    <Tooltip>
-      <TooltipTrigger>
-        <CircleCheckBig className="size-4 text-chart-2" />
-      </TooltipTrigger>
-      <TooltipContent>Featured</TooltipContent>
-    </Tooltip>
-  );
-}
-
-function AdminBadge() {
-  return (
-    <Tooltip>
-      <TooltipTrigger>
-        <ShieldUser className="size-4 text-blue-600 dark:text-blue-400" />
-      </TooltipTrigger>
-      <TooltipContent>Admin</TooltipContent>
-    </Tooltip>
   );
 }
