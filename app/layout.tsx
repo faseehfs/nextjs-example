@@ -26,10 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="w-full h-dvh" suppressHydrationWarning>
+    <html lang="en" className="w-full min-h-dvh" suppressHydrationWarning>
       <body
         className={cn(
-          "w-full h-full antialiased",
+          "w-full min-h-dvh antialiased",
           geistSans.variable, // This allows us to use --font-geist-sans variable in our CSS
           geistMono.variable, // This allows us to use --font-geist-mono variable in our CSS
         )}

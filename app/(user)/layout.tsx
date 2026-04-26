@@ -7,14 +7,8 @@ export default async function WithNavLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const session = await auth();
-
-  // if (!session?.user) {
-  //   redirect("/sign-in");
-  // }
-
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-full min-h-dvh">
       <SessionProvider>
         <Navbar />
         <div className="flex-1">{children}</div>
