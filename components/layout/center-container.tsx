@@ -10,7 +10,7 @@ export default function CenterContainer({
   return (
     <div
       className={cn(
-        "flex flex-col w-full h-full justify-center items-center p-4 gap-4",
+        "flex flex-col w-full min-h-dvh justify-center items-center p-4 gap-4",
         className,
       )}
     >

@@ -4,13 +4,13 @@
 
 ## Setup instructions
 
+**Note:** The setup assumes a Linux environment.
+
 1. Clone the repo and pull LFS objects.
-
 2. Run `npm install` or `npm i` to install the dependencies.
-
-3. If you haven't already, install the Vercel CLI using `npm i -g vercel` and login using the command `vercel login`. Link the project using `vercel link` and run `vercel env pull` to download the environment variables.
-
-4. Run `npx prisma generate` to generate the prisma client.
+3. If you haven't already, install the Vercel CLI using `npm i -g vercel` and login using the command `vercel login`.
+4. Link the project using `vercel link` and run `vercel env pull` to download the environment variables.
+5. Run `npx prisma generate` to generate the prisma client.
 
 Now, you can start the development server using `npm run dev` or build the app using `npm run build`. Run `npm start` to run the build. Note that the build may not support auth if run locally.
 
