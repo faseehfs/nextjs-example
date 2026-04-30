@@ -41,20 +41,18 @@ export default function UserMenu() {
 
   return (
     <Drawer direction="right">
-      {status === "loading" || session ? (
+      {status === "loading" ? (
+        <Skeleton className="size-8 rounded-full border" />
+      ) : session ? (
         <DrawerTrigger asChild>
-          {status === "loading" ? (
-            <Skeleton className="size-8 rounded-full border" />
-          ) : (
-            <Image
-              src={String(session?.user?.image)}
-              width={240}
-              height={240}
-              alt="User Avatar"
-              referrerPolicy="no-referrer"
-              className="size-8 rounded-full border"
-            />
-          )}
+          <Image
+            src={String(session?.user?.image)}
+            width={240}
+            height={240}
+            alt="User Avatar"
+            referrerPolicy="no-referrer"
+            className="size-8 rounded-full border"
+          />
         </DrawerTrigger>
       ) : (
         <Link href="/sign-in">
@@ -74,6 +72,10 @@ export default function UserMenu() {
       </DrawerContent>
     </Drawer>
   );
+}
+
+function UserMenuTrigger() {
+  return <></>;
 }
 
 function UserMenuContent() {
