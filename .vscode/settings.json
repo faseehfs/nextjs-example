@@ -3,5 +3,7 @@
   "editor.quickSuggestions": {
     "strings": "on"
   },
-"css.lint.unknownAtRules": "ignore"
+  "editor.inlineSuggest.enabled": false,
+  "css.lint.unknownAtRules": "ignore",
+  "editor.tabSize": 2
 }
