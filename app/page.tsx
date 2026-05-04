@@ -1,5 +1,5 @@
 import Link from "next/link";
-import FancyButton from "./_components/fancy-button";
+import FancyButton from "./_components/shimmering-button";
 
 export default function LandingPage() {
   return (
