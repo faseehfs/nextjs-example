@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
 import Image from "next/image";
-import { TriangleAlert } from "lucide-react";
+import { PenLine, TriangleAlert } from "lucide-react";
 import { DeletePostDialog } from "./_components/delete-post-dialog";
 import { auth } from "@/auth";
 import {
@@ -81,7 +81,10 @@ export default async function PostPage({
             <p>You are the owner of this post.</p>
             <div className="flex gap-2">
               <Link href={`/post/edit/${post.id}`}>
-                <Button>Edit Post</Button>
+                <Button>
+                  <PenLine className="size-4" />
+                  Edit Post
+                </Button>
               </Link>
               <DeletePostDialog postId={post.id} />
             </div>

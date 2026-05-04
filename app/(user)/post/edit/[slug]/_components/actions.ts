@@ -3,6 +3,7 @@
 import { auth } from "@/auth";
 import prisma from "@/lib/prisma";
 import { Post } from "@/prisma/src/generated/prisma/client";
+import { validatePost } from "../../../utils";
 
 export default async function updatePost(
   post: Post,
@@ -17,16 +18,22 @@ export default async function updatePost(
     return { success: false, message: "You are not the author of this post." };
   }
 
-  const title = post.title.trim();
-  const content = post.content?.trim();
+  const { approved, newTitle, newContent, message } = validatePost({
+    title: post.title,
+    content: String(post.content),
+  });
+
+  if (!approved) {
+    return { success: false, message };
+  }
 
   await prisma.post.update({
     where: {
       id: post.id,
     },
     data: {
-      title,
-      content,
+      title: newTitle,
+      content: newContent,
     },
   });
 
