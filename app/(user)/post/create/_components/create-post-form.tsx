@@ -29,8 +29,8 @@ export default function CreatePostForm() {
     try {
       const result = await createPost({ title, content });
 
-      if (result?.error) {
-        setErrorMessage(result.error);
+      if (!result.success) {
+        setErrorMessage(result.message);
         return;
       }
 
