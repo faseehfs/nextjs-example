@@ -45,3 +45,5 @@ Theme: Tiesen (from <tweakcn.com>).
 - Prisma: <https://www.prisma.io/docs>
 - Motion: <https://motion.dev/docs/react>
 - Typography: <https://github.com/tailwindlabs/tailwindcss-typography>
+- TailwindCSS: <https://tailwindcss.com/docs>
+- Shadcn: <https://shadcn.com/>
